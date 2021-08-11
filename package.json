@@ -34,7 +34,6 @@
     "browserify": "^17.0.0",
     "cheerio": "^0.22.0",
     "cors": "^2.8.5",
-    "electron": "^9.1.0",
     "envify": "^4.0.0",
     "eslint": "^6.2.1",
     "eslint-config-standard": "^14.0.0",
@@ -131,6 +130,7 @@
     "build:min.js": "uglifyjs ./dist/twilio-video.js -o ./dist/twilio-video.min.js --comments \"/^! twilio-video.js/\" -b beautify=false,ascii_only=true",
     "build": "npm-run-all clean lint docs cover test:integration build:es5 build:js build:min.js test:umd",
     "build:quick": "npm-run-all clean lint docs build:es5 build:js build:min.js build:ts",
+    "playback": "npm-run-all clean build:es5",
     "docs": "node ./scripts/docs.js ./dist/docs",
     "clean": "rimraf ./coverage ./es5 ./dist",
     "cover": "istanbul cover node_modules/mocha/bin/_mocha -- ./test/unit/index.js"
